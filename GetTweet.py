@@ -1,3 +1,4 @@
+import os
 import re
 import requests
 import tweepy
@@ -36,4 +37,4 @@ def gettweet(CK, CKS, AT, ATS):
     f.close()
 
 if __name__=="__main__":
-    get_tweets(CK,CKS,AT,ATS)
+    gettweet(CK,CKS,AT,ATS)

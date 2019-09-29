@@ -8,7 +8,10 @@ import PrepareChain
 
 def puttweet():
     twitter = OAuth1Session(os.environ["CONSUMER_KEY"], os.environ["CONSUMER_SECRET"], os.environ["ACCESS_TOKEN_KEY"], os.environ["ACCESS_TOKEN_SECRET"])
-    chain=PrepareChain.PrepareChain()
+    f = open("data.txt",encoding="utf-8")
+    text = f.read()
+    f.close()
+    chain=PrepareChain.PrepareChain(text)
     triplet_freqs = chain.make_triplet_freqs()
     chain.save(triplet_freqs, True)
     generator=GenerateText(1)

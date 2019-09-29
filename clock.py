@@ -2,11 +2,14 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 import TextTweet
 import GetTweet
 
+# APIの秘密鍵
+CK,CKS,AT,ATS=os.environ["CONSUMER_KEY"], os.environ["CONSUMER_SECRET"], os.environ["ACCESS_TOKEN_KEY"], os.environ["ACCESS_TOKEN_SECRET"]
+
 twische = BlockingScheduler()
 
 @twische.scheduled_job('interval',minutes=60)
 def timed_job():
-    GetTweet.gettweet()
+    GetTweet.gettweet(Ck,CKS,AT,ATS)
     TextTweet.puttweet()
 
 if __name__ == "__main__":
