@@ -13,5 +13,5 @@ def puttweet():
     chain.save(triplet_freqs, True)
     generator=GenerateText(1)
     tw=generator.generate()
-    params = {"status": tw}
+    params = {"status": "[hals_ai]"+tw}
     req = twitter.post("https://api.twitter.com/1.1/statuses/update.json", params = params)
