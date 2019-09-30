@@ -23,7 +23,7 @@ jupyter-core==4.5.0
 kiwisolver==1.1.0
 Mastodon.py==1.4.6
 matplotlib==3.1.1
-mecab-python-windows==0.996.3
+mecab-python3==0.996.2
 memory-profiler==0.55.0
 numpy==1.17.2
 oauthlib==3.1.0
