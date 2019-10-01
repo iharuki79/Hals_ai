@@ -9,7 +9,7 @@ twische = BlockingScheduler()
 
 @twische.scheduled_job('interval',minutes=30)
 def timed_job():
-    GetTweet.gettweet(Ck,CKS,AT,ATS)
+    GetTweet.gettweet(CK,CKS,AT,ATS)
     TextTweet.puttweet()
 
 if __name__ == "__main__":
