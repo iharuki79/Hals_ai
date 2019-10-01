@@ -12,7 +12,7 @@ def gettweet(CK, CKS, AT, ATS):
     api = tweepy.API(auth)
 
     name="Hals_SC"
-    results=api.user_timeline(screen_name=name,count=100,include_rts=False)
+    results=api.user_timeline(screen_name=name,count=50,include_rts=False)
 
     f=open(r"data.txt",mode="a",encoding="utf-8")
 
@@ -24,7 +24,7 @@ def gettweet(CK, CKS, AT, ATS):
         #リンクの削除
         result.text=re.sub(r"https?://[\w/:%#\$&\?\(\)~\.=\+\-…_]+", "" ,result.text)
 
-        #「まぁじ占い」の削除(結果は残す)
+        #「まぁじ占い」の削除
         result.text=re.sub("⭐まぁじ占い⭐","",result.text)
 
         #個人的に出てきてほしくないので「#peing」「#質問箱」を消す
