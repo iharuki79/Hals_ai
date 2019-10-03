@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 import re
 import requests
@@ -7,10 +8,13 @@ import tweepy
 CK,CKS,AT,ATS=os.environ["CONSUMER_KEY"], os.environ["CONSUMER_SECRET"], os.environ["ACCESS_TOKEN_KEY"], os.environ["ACCESS_TOKEN_SECRET"]
 
 def gettweet(CK, CKS, AT, ATS):
+
+    # APIに接続
     auth = tweepy.OAuthHandler(CK, CKS)
     auth.set_access_token(AT, ATS)
     api = tweepy.API(auth)
 
+    # ユーザを指定してRTを除いたツイートを取得
     name="Hals_SC"
     results=api.user_timeline(screen_name=name,count=50,include_rts=False)
 
