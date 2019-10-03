@@ -24,6 +24,9 @@ def gettweet(CK, CKS, AT, ATS):
         #リンクの削除
         result.text=re.sub(r"https?://[\w/:%#\$&\?\(\)~\.=\+\-…_]+", "" ,result.text)
 
+        #@ツイートの削除(昔仲良くしていたけど今ブロ解された…みたいな人に行くと地獄なので)
+        result.text=re.sub("@[\w]+","",result.text)
+
         #「まぁじ占い」の削除
         result.text=re.sub("⭐まぁじ占い⭐","",result.text)
 
@@ -32,7 +35,7 @@ def gettweet(CK, CKS, AT, ATS):
         result.text=re.sub("#質問箱","",result.text)
 
         #data.txtに追加で書き込み
-        f.write(result.text)
+        f.write(result.text+"\n")
 
     f.close()
 

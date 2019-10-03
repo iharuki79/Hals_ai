@@ -33,5 +33,8 @@ data.txtからPrepareChain.pyとGenerateText.pyで文章を生成、ツイート
 ダミーファイル、内容に特に意味はない
 
 ### Procfile,runtime.txt,requirements.txt,.caller
-herokuで動かす環境を作成
+herokuで動かす環境を作成  
 ※pip freeze>requirements.txtをコマンドプロンプトで実行し、一部削除した
+
+## Dog_vs_Cat.py
+**マルコフ連鎖とは全く関係のない** 犬と猫が喧嘩するだけのプログラム
