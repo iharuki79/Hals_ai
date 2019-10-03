@@ -17,10 +17,15 @@ def timed_job():
 # 半日に一度ツイートを取得、チェーンを作ってdbに保存
 @twische.scheduled_job('interval',hours=12)
 def timed_job():
+    #ツイートを取得
     GetTweet.gettweet(Ck,CKS,AT,ATS)
+
+    #data.txtに保存
     f = open("data.txt",encoding="utf-8")
     text = f.read()
     f.close()
+
+    #チェーンを作成、dbに保存
     chain = PrepareChain(text)
     triplet_freqs = chain.make_triplet_freqs()
     chain.save(triplet_freqs, True)

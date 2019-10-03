@@ -1,2 +1,2 @@
-web:python index.py
-clock:python clock.py
+web : python index.py
+clock : python clock.py
