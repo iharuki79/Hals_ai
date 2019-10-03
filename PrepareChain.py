@@ -141,7 +141,7 @@ class PrepareChain(object):
             print("|".join(triplet), "\t", triplet_freqs[triplet])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     f = open("data.txt",encoding="utf-8")
     text = f.read()
     f.close()

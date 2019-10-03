@@ -10,7 +10,7 @@ class GenerateText(object):
     文章作成用のクラス
     """
 
-    def __init__(self, n=5):
+    def __init__(self, n=1):
         """
         初期化メソッド
         """
@@ -127,5 +127,5 @@ class GenerateText(object):
 
 
 if __name__ == "__main__":
-    generator = GenerateText(1)
+    generator = GenerateText()
     print(generator.generate())
