@@ -9,14 +9,12 @@ CK,CKS,AT,ATS=os.environ["CONSUMER_KEY"], os.environ["CONSUMER_SECRET"], os.envi
 
 twische = BlockingScheduler()
 
-# 30分に一度ツイート
 @twische.scheduled_job('interval',minutes=30)
-def timed_job():
+def timed_tweet():
+    # 30分に一度ツイート
     TextTweet.puttweet()
 
-# 半日に一度ツイートを取得、チェーンを作ってdbに保存
-@twische.scheduled_job('interval',hours=12)
-def timed_job():
+def collect_tweet():
     #ツイートを取得
     GetTweet.gettweet(Ck,CKS,AT,ATS)
 
@@ -31,4 +29,6 @@ def timed_job():
     chain.save(triplet_freqs, True)
 
 if __name__ == "__main__":
+    twische.add_job(collect_tweet,"cron",hour="0")
+    twische.add_job(collect_tweet,"cron",hour="12")
     twische.start()
