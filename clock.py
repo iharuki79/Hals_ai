@@ -16,7 +16,7 @@ def timed_tweet():
 
 def collect_tweet():
     #ツイートを取得
-    GetTweet.gettweet(Ck,CKS,AT,ATS)
+    GetTweet.gettweet(CK,CKS,AT,ATS)
 
     #data.txtに保存
     f = open("data.txt",encoding="utf-8")
