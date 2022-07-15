@@ -45,4 +45,4 @@ pyzmq==18.1.0
 requests==2.22.0
 requests-oauthlib==1.2.0
 tweepy==3.8.0
-urllib3==1.25.6
+urllib3==1.26.5
